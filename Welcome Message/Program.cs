@@ -10,9 +10,9 @@ namespace Welcome_Message
     {
         static void Main(string[] args)
         {
-            Console.WriteLine()
+            Console.WriteLine("Enter your name: ");
             string name = Console.ReadLine();
-            Console.WriteLine("Hi Sebastian, welcom to my program1");
+            Console.WriteLine("Hi " + name + ",welcome to my program!");
             Console.ReadLine();
         }
     }
