@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Welcome Message", "Welcome 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickADoor", "PickADoor\PickADoor.csproj", "{35521C84-01ED-4C16-87E0-20BA35115D36}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loops", "Loops\Loops.csproj", "{7A59618F-99E7-4FA7-A2A8-74D6AA1A469F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgeProgarm", "AgeProgarm\AgeProgarm.csproj", "{3779BB34-E123-46CC-B7DD-0E6E44AD84CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{35521C84-01ED-4C16-87E0-20BA35115D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35521C84-01ED-4C16-87E0-20BA35115D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35521C84-01ED-4C16-87E0-20BA35115D36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A59618F-99E7-4FA7-A2A8-74D6AA1A469F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A59618F-99E7-4FA7-A2A8-74D6AA1A469F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A59618F-99E7-4FA7-A2A8-74D6AA1A469F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A59618F-99E7-4FA7-A2A8-74D6AA1A469F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3779BB34-E123-46CC-B7DD-0E6E44AD84CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3779BB34-E123-46CC-B7DD-0E6E44AD84CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3779BB34-E123-46CC-B7DD-0E6E44AD84CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3779BB34-E123-46CC-B7DD-0E6E44AD84CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
