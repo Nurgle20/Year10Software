@@ -13,14 +13,19 @@ namespace AgeProgarm
             Console.WriteLine("Please Enter your Age");
             int age  = int.Parse(Console.ReadLine());
 
-            if (age <= "13")
+            if (age <= 13)
             {
                 Console.WriteLine("You're a Child");
             }
-            else if (age <= "20")
+            else if (age <= 20)
             {
-                Console.WriteLine("You're a Teen")
+                Console.WriteLine("You're a Teen");
             }
+            else
+            {
+                Console.WriteLine("You're An Adult");
+            }
+            Console.ReadKey();
         }
     }
 }
