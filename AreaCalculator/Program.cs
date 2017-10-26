@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,7 +55,7 @@ namespace AreaCalculator
                 }
                 else if (choice == "4")
                 {
-                    break;
+                    Process.Start("U:/ict year 10/visual studio/Year10Software/Loops/bin/Debug/Loops.exe");
                 }
 
                 // wait

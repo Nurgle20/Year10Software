@@ -10,7 +10,7 @@ namespace Loops
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Press Enter to number....");
+            Console.WriteLine("Press Enter a number....");
             int number = int.Parse(Console.ReadLine());
 
             for(int num = 1; num <= number; num++)
