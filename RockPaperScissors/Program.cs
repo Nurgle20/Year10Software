@@ -40,6 +40,8 @@ namespace RockPaperScissors
                 Console.WriteLine("1: Rock");
                 Console.WriteLine("2: Paper");
                 Console.WriteLine("3: Scissors");
+                Console.WriteLine("4: Lizard");
+                Console.WriteLine("5: Spock");
                 choice = Console.ReadLine();
             }
             if (choice == "1")
@@ -50,7 +52,7 @@ namespace RockPaperScissors
             {
                 return "Paper";
             }
-            else
+            else if
             {
                 return "Scissors";
             }
