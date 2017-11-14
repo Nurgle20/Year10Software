@@ -52,9 +52,17 @@ namespace RockPaperScissors
             {
                 return "Paper";
             }
-            else if
+            else if (choice == "3")
             {
                 return "Scissors";
+            }
+            else if (choice == "4")
+            {
+                return "Lizard";
+            }
+            else
+            {
+                return "Spock";
             }
         }
         private static string ComputerTurn()
@@ -70,9 +78,17 @@ namespace RockPaperScissors
             {
                 return "Paper";
             }
-            else
+            else if (choice == 3)
             {
                 return "Scissors";
+            }
+            else if (choice == 4)
+            {
+                return "Lizard";
+            }
+            else
+            {
+                return "Spock";
             }
         }
         private static string DetermineWinner(string user, string computer)
@@ -87,9 +103,17 @@ namespace RockPaperScissors
                 {
                     return "Lose";
                 }
-                else 
+                else if (computer == "Scissors")
                 {
                     return "Win";
+                }
+                else if (computer == "Lizard")
+                {
+                    return "Win";
+                }
+                else
+                {
+                    return "Lose";
                 }
             }
             else if (user == "Paper")
@@ -102,12 +126,20 @@ namespace RockPaperScissors
                 {
                     return "Draw";
                 }
-                else 
+                else if (computer == "Scissors")
                 {
                     return "Lose";
                 }
+                else if (computer == "Lizard")
+                {
+                    return "Lose";
+                }
+                else
+                {
+                    return "Win";
+                }
             }
-            else
+            else if (user == "Scissors")
             {
                 if (computer == "Rock")
                 {
@@ -117,11 +149,66 @@ namespace RockPaperScissors
                 {
                     return "Win";
                 }
-                else 
+                else if (computer == "Scissors")
                 {
                     return "Draw";
                 }
+                else if (computer == "Lizard")
+                {
+                    return "Win";
+                }
+                else
+                {
+                    return "Lose";
+                }
             }
+            else if (user == "Lizard")
+            {
+                if (computer == "Rock")
+                {
+                    return "Lose";
+                }
+                else if (computer == "Paper")
+                {
+                    return "Win";
+                }
+                else if (computer == "Scissors")
+                {
+                    return "Lose";
+                }
+                else if (computer == "Lizard")
+                {
+                    return "Draw";
+                }
+                else
+                {
+                    return "Win";
+                }
+            }
+            else
+            {
+                if (computer == "Rock")
+                {
+                    return "Win";
+                }
+                else if (computer == "Paper")
+                {
+                    return "Lose";
+                }
+                else if (computer == "Scissors")
+                {
+                    return "Win";
+                }
+                else if (computer == "Lizard")
+                {
+                    return "Lose";
+                }
+                else
+                {
+                    return "Draw";
+                }
+            } 
+           
         }
         private static void GiveFeedback(string reault, string userChoice, string computerChoice)
         {

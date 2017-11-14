@@ -25,11 +25,7 @@ namespace babyBlackjack
             Menu(ref money);
         }
 
-
-
-            private static void playGame(ref float money)..
-
-            private static float MakeBet(ref float money)
+        private static float MakeBet(ref float money)
         {
             float betAmount = 0;
             bool validBet = false;
@@ -49,21 +45,53 @@ namespace babyBlackjack
                     Console.WriteLine("Sorry, you cannot bet a negative amount. Try again");
                     validBet = false;
                 }
-             }
-            money ,money - 
+            }
+            money = money - betAmount;
+            return betAmount;
         }
-        private static int DealCards(Random rnd, string player)...
 
-        private static bool determineWinnner(int player, int dealer)...
+        private static int DealCards(Random rnd, string player)
+        {
+           int card1 = rnd.Next(11);
+           int card2 = rnd.Next(11);
+           int total = card1 + card2;
+           Console.WriteLine(player + " drew " + card1 + " and " + card2 + " for a total of " + total);
+           return total;
+        }
 
-        private static void PayOut(bool playerWins, float betAmount, ref float money)...
+        private static bool determineWinner(int player, int dealer)
+        {
+            if (player > dealer)
+            {
+                Console.WriteLine("You Win!");
+                return true;
+            }
+            else if (player < dealer)
+            {
+                Console.WriteLine("You Lose!");
+                return false;
+            }
+            else
+            {
+                Console.WriteLine("It's a Draw! Dealer still Wins!");
+                return false;
+            }
+        }
+
+        private static void PayOut(bool playerWins, float betAmount, ref float money)
+        {
+            if (playerWins)
+            {
+                money = money + (betAmount * 2);
+            }
+        }
 
         private static void Menu(ref float money)
         {
             Console.Write("Would you like anthoer game? y/n: ");
             if(Console.ReadLine() == "y")
             {
-                playGame(ref money)
+                playGame(ref money);
             }
         }
 
