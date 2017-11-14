@@ -29,7 +29,14 @@ namespace babyBlackjack
         {
             float betAmount = 0;
             bool validBet = false;
-            Console.WriteLine("Enter your bet. you have $" + money);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write("Dealer: ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Please enter your bet. you have $" + money);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("You: ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("");
 
             while (validBet != true)
             {
