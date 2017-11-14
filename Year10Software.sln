@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magic8-Ball", "Magic8-Ball\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "babyBlackjack", "babyBlackjack\babyBlackjack.csproj", "{428F00D3-BAD5-4A3C-B8CC-9F17A313E5DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "Classes\Classes.csproj", "{E6C4F2F8-7908-48C4-AE7E-26A7615CBA7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{428F00D3-BAD5-4A3C-B8CC-9F17A313E5DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{428F00D3-BAD5-4A3C-B8CC-9F17A313E5DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{428F00D3-BAD5-4A3C-B8CC-9F17A313E5DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6C4F2F8-7908-48C4-AE7E-26A7615CBA7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6C4F2F8-7908-48C4-AE7E-26A7615CBA7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6C4F2F8-7908-48C4-AE7E-26A7615CBA7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6C4F2F8-7908-48C4-AE7E-26A7615CBA7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
