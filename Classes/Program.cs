@@ -12,7 +12,13 @@ namespace Classes
         {
             Person p = new Person("Sebastian" , "Vogel", 17);
             p.Sit();
+            p.Walk(100);
             p.Stand();
+            p.Birthday();
+            p.Walk(100);
+            p.PrintInfo();
+
+            Console.ReadLine();
         }
     }
 
@@ -31,6 +37,55 @@ namespace Classes
             this.age = age;
             sitting = true;
             steps = 0;
+        }
+
+        public void ChangeName(string firstName, string lastName)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        public void ChangeNamePrompt()
+        {
+            Console.WriteLine($"Name is currently {this.firstName} {this.lastName}, enter new name.");
+            Console.Write("First Name: ");
+            string firstName = Console.ReadLine();
+            Console.Write("Last Name: ");
+            string lastName = Console.ReadLine();
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        public void Walk(int steps)
+        {
+            if (sitting)
+            {
+                Console.WriteLine("You can't walk while you are sitting");
+            }
+            else
+            {
+                Console.WriteLine($"{firstName} {lastName} just walked {steps} steps");
+                this.steps += steps;
+            }
+        }
+
+        public void Birthday()
+        {
+            age++;
+        }
+
+        public void PrintInfo()
+        {
+            if (sitting)
+            {
+                Console.WriteLine($"{firstName} {lastName} is {age} years old, is currently sitting" +
+                                  $" and has taken {steps} steps.");
+            }
+            else
+            {
+                Console.WriteLine($"{firstName} {lastName} is {age} years old, is currently standing" +
+                                  $" and has taken {steps} steps.");
+            }
         }
 
         public void Sit()
@@ -59,5 +114,5 @@ namespace Classes
        
         
     }
-
+    
 }
