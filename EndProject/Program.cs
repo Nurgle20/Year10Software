@@ -13,45 +13,55 @@ namespace EndProject
             Console.WriteLine("Enter your name: ");
             string name = Console.ReadLine();
             Console.WriteLine("Hi " + name + ",welcome to my program!");
-            Console.ReadLine();
+           
 
-            Person p = new Person("Sebastian", "Vogel", 17);
-            p.Sit();
-            p.Walk(100);
-            p.Stand();
-            p.Birthday();
-            p.Walk(100);
-            p.ChangeNamePrompt();
-            p.PrintInfo();
-
-            Console.ReadLine();
+           
 
             string pick = "";
             while (pick != "3") ;
             Console.WriteLine("Press 1 for Rock Paper Scissors Lizard Spock:");
             Console.WriteLine("Press 2 for BabyBlackJack");
-            Console.WriteLine("Press 3 to Exit");
+            Console.WriteLine("Press 3 to Class");
 
             if (pick == "1")
             {
 
+                int userScore = 0;
+                int computerScore = 0;
+                bool repeat = true;
+
+                while (repeat == true)
+                {
+                    string result = "draw";
+                    PrintScore(ref userScore, ref computerScore);
+                    string userChoice = UserTurn();
+                    string computerChoice = ComputerTurn();
+                    result = DetermineWinner(userChoice, computerChoice);
+                    GiveFeedback(result, userChoice, computerChoice);
+                    updateScores(result, ref userScore, ref computerScore);
+                    repeat = PlayAgain();
+                }
             }
-
-            int userScore = 0;
-            int computerScore = 0;
-            bool repeat = true;
-
-            while (repeat == true)
+            else if (pick == "2")
             {
-                string result = "draw";
-                PrintScore(ref userScore, ref computerScore);
-                string userChoice = UserTurn();
-                string computerChoice = ComputerTurn();
-                result = DetermineWinner(userChoice, computerChoice);
-                GiveFeedback(result, userChoice, computerChoice);
-                updateScores(result, ref userScore, ref computerScore);
-                repeat = PlayAgain();
+
             }
+
+            else
+            {
+                Person p = new Person("Sebastian", "Vogel", 17);
+                p.Sit();
+                p.Walk(100);
+                p.Stand();
+                p.Birthday();
+                p.Walk(100);
+                p.ChangeNamePrompt();
+                p.PrintInfo();
+
+                Console.ReadLine();
+            }
+            
+           
         }
 
         private static void PrintScore(ref int userScore, ref int computerScore)
