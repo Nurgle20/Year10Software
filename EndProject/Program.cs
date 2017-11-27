@@ -10,60 +10,77 @@ namespace EndProject
     {
         static void Main(string[] args)
         {
+
             Console.WriteLine("Enter your name: ");
             string name = Console.ReadLine();
             Console.WriteLine("Hi " + name + ",welcome to my program!");
-           
+            Console.ReadLine();
 
-           
-
-            string pick = "";
-            while (pick != "3") ;
-            Console.WriteLine("Press 1 for Rock Paper Scissors Lizard Spock:");
-            Console.WriteLine("Press 2 for BabyBlackJack");
-            Console.WriteLine("Press 3 to Class");
-
-            if (pick == "1")
+            string choice = "";
+            while (choice != "4")
             {
+                // Menu 
+                Console.WriteLine("choose an Option:");
+                Console.WriteLine("1. Rock Paper Scissors Lizard Spock");
+                Console.WriteLine("2. BabyBlackJack");
+                Console.WriteLine("3. Class");
+                Console.WriteLine("4. Exit");
+                choice = Console.ReadLine();
 
-                int userScore = 0;
-                int computerScore = 0;
-                bool repeat = true;
-
-                while (repeat == true)
+                if (choice == "1")
                 {
-                    string result = "draw";
-                    PrintScore(ref userScore, ref computerScore);
-                    string userChoice = UserTurn();
-                    string computerChoice = ComputerTurn();
-                    result = DetermineWinner(userChoice, computerChoice);
-                    GiveFeedback(result, userChoice, computerChoice);
-                    updateScores(result, ref userScore, ref computerScore);
-                    repeat = PlayAgain();
+                    playRPS();
                 }
-            }
-            else if (pick == "2")
-            {
+                else if (choice == "2")
+                {
+                    playBBJ();
+                }
+                else if (choice == "3")
+                {
+                    playClass();
+                }
+                else
+                {
+
+                }
 
             }
-
-            else
-            {
-                Person p = new Person("Sebastian", "Vogel", 17);
-                p.Sit();
-                p.Walk(100);
-                p.Stand();
-                p.Birthday();
-                p.Walk(100);
-                p.ChangeNamePrompt();
-                p.PrintInfo();
-
-                Console.ReadLine();
-            }
-            
-           
         }
 
+        private static void playClass()
+        {
+            Person p = new Person("Sebastian", "Vogel", 17);
+            p.Sit();
+            p.Walk(100);
+            p.Stand();
+            p.Birthday();
+            p.Walk(100);
+            p.ChangeName("Garion", "Vogel");
+            p.ChangeNamePrompt();
+            p.PrintInfo();
+
+            Console.ReadLine();
+        }
+
+        #region Rock Paper Scissors
+        private static void playRPS()
+        {
+            int userScore = 0;
+            int computerScore = 0;
+            bool repeat = true;
+
+            while (repeat == true)
+            {
+                string result = "draw";
+                PrintScore(ref userScore, ref computerScore);
+                string userChoice = UserTurn();
+                string computerChoice = ComputerTurn();
+                result = DetermineWinner(userChoice, computerChoice);
+                GiveFeedback(result, userChoice, computerChoice);
+                updateScores(result, ref userScore, ref computerScore);
+                repeat = PlayAgain();
+            }
+        }
         private static void PrintScore(ref int userScore, ref int computerScore)
         {
             Console.Clear();
@@ -249,7 +266,7 @@ namespace EndProject
         }
         private static void GiveFeedback(string reault, string userChoice, string computerChoice)
         {
-            Console.WriteLine(reault + "! The compuer chose " + computerChoice + " and you chose " + userChoice);
+            Console.WriteLine(reault + "! The computer chose " + computerChoice + " and you chose " + userChoice);
         }
         private static bool PlayAgain()
         {
@@ -279,9 +296,18 @@ namespace EndProject
                 computerScore++;
             }
         }
+        #endregion
+
+
+        private static void playBBJ
+        {
+
+        }
+
+        
+
+
     }
-
-
 
     class Person
     {
@@ -300,25 +326,21 @@ namespace EndProject
             steps = 0;
         }
 
-        public void ChangeName(string firstName, string lastName, string age)
+        public void ChangeName(string firstName, string lastName)
         {
             this.firstName = firstName;
             this.lastName = lastName;
-            
         }
 
         public void ChangeNamePrompt()
         {
-            Console.WriteLine($"Name is currently {this.firstName} {this.lastName} and is {this.age} years old, enter new name.");
+            Console.WriteLine($"Name is currently {this.firstName} {this.lastName}, enter new name.");
             Console.Write("First Name: ");
             string firstName = Console.ReadLine();
             Console.Write("Last Name: ");
             string lastName = Console.ReadLine();
-            Console.Write("Age: ");
-            string age = Console.ReadLine();
             this.firstName = firstName;
             this.lastName = lastName;
-           
         }
 
         public void Walk(int steps)
@@ -376,6 +398,108 @@ namespace EndProject
                 Console.WriteLine($"{firstName} {lastName} is already standing");
             }
         }
+    
+
+        private static void playBBJ()
+        {
+            float money = 10;
+            playGame(ref money);
+        }
+        private static void playGame(ref float money)
+        {
+            Console.Clear();
+            float betAmount = MakeBet(ref money);
+            Random rnd = new Random();
+            int playerTotal = DealCards(rnd, "You");
+            int dealerTotal = DealCards(rnd, "The dealer");
+            bool playerWin = determineWinner(playerTotal, dealerTotal);
+            PayOut(playerWin, betAmount, ref money);
+            Menu(ref money);
+        }
+
+        private static float MakeBet(ref float money)
+        {
+            float betAmount = 0;
+            bool validBet = false;
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write("Dealer: ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Please enter your bet. you have $" + money);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("You: ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("");
+
+            while (validBet != true)
+            {
+                validBet = float.TryParse(Console.ReadLine(), out betAmount);
+
+                if (betAmount > money)
+                {
+                    Console.WriteLine("Sorry, you do not have enough. Try again.");
+                    validBet = false;
+                }
+                else if (betAmount < 0)
+                {
+                    Console.WriteLine("Sorry, you cannot bet a negative amount. Try again");
+                    validBet = false;
+                }
+            }
+            money = money - betAmount;
+            return betAmount;
+        }
+
+        private static int DealCards(Random rnd, string player)
+        {
+            int card1 = rnd.Next(11);
+            int card2 = rnd.Next(11);
+            int total = card1 + card2;
+            Console.WriteLine(player + " drew " + card1 + " and " + card2 + " for a total of " + total);
+            return total;
+        }
+
+        private static bool determineWinner(int player, int dealer)
+        {
+            if (player > dealer)
+            {
+                Console.WriteLine("You Win!");
+                return true;
+            }
+            else if (player < dealer)
+            {
+                Console.WriteLine("You Lose!");
+                return false;
+            }
+            else
+            {
+                Console.WriteLine("It's a Draw! Dealer still Wins!");
+                return false;
+            }
+        }
+
+        private static void PayOut(bool playerWins, float betAmount, ref float money)
+        {
+            if (playerWins)
+            {
+                money = money + (betAmount * 2);
+            }
+        }
+
+        private static void Menu(ref float money)
+        {
+            Console.Write("Would you like anthoer game? y/n: ");
+            if (Console.ReadLine() == "y")
+            {
+                playGame(ref money);
+            }
+        }
     }
+
+        
+
+    
+
+
+}
 
 }

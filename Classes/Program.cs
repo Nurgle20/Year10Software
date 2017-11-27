@@ -16,6 +16,8 @@ namespace Classes
             p.Stand();
             p.Birthday();
             p.Walk(100);
+            p.ChangeName("Garion", "Vogel");
+            p.ChangeNamePrompt();
             p.PrintInfo();
 
             Console.ReadLine();

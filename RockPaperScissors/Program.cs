@@ -212,7 +212,7 @@ namespace RockPaperScissors
         }
         private static void GiveFeedback(string reault, string userChoice, string computerChoice)
         {
-            Console.WriteLine(reault + "! The compuer chose " + computerChoice + " and you chose " + userChoice);
+            Console.WriteLine(reault + "! The computer chose " + computerChoice + " and you chose " + userChoice);
         }
         private static bool PlayAgain()
         {
